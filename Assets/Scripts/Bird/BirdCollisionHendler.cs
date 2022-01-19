@@ -6,15 +6,18 @@ using UnityEngine;
 
 public class BirdCollisionHendler : MonoBehaviour
 {
-    private Bird _bird;
+    private Bird _player;
 
     private void Start()
     {
-        _bird = GetComponent<Bird>();
+        _player = GetComponent<Bird>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _bird.Die();
+        if (collision.TryGetComponent(out ScoreZone score))
+            _player.AddScore();
+        else
+            _player.Die();
     }
 }
