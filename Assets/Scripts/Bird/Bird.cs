@@ -20,7 +20,7 @@ public class Bird : MonoBehaviour
         _birdMover.Reset();
     }
 
-    private void Die()
+    public void Die()
     {
         Debug.Log("You died");
         Time.timeScale = 0;

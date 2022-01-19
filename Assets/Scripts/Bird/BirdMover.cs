@@ -19,10 +19,10 @@ public class BirdMover : MonoBehaviour
 
     private void Start()
     {
-        Reset();
         _rigidbody = GetComponent<Rigidbody2D>();
         _minRotation = Quaternion.Euler(0, 0, _minRotationZ);
         _maxRotation = Quaternion.Euler(0, 0, _maxRotationZ);
+        Reset();
     }
 
     private void Update()

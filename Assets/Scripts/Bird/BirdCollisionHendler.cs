@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Bird))]
+
 public class BirdCollisionHendler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Bird _bird;
+
+    private void Start()
     {
-        
+        _bird = GetComponent<Bird>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        _bird.Die();
     }
 }

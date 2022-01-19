@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 2658793011151582713}
   - component: {fileID: 2658793011151582712}
   - component: {fileID: 2658793011151582719}
+  - component: {fileID: 505523409}
+  - component: {fileID: 7402321673195388340}
+  - component: {fileID: 505523407}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -122,3 +125,43 @@ MonoBehaviour:
   _speedRotate: 1.5
   _minRotationZ: -90
   _maxRotationZ: 50
+--- !u!114 &505523409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658793011151582718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94cb9590eb5d6f4aa19327b34dcc1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7402321673195388340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658793011151582718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690ec473b098129418c8ff16be12f16d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &505523407
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658793011151582718}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.011078805}
+  serializedVersion: 2
+  m_Radius: 0.25036252
