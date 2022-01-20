@@ -17,7 +17,7 @@ public class Bird : MonoBehaviour
         _birdMover = GetComponent<BirdMover>();
     }
 
-    public void ReserPlayer()
+    public void ResetPlayer()
     {
         _score = 0;
         _birdMover.Reset();
@@ -25,8 +25,7 @@ public class Bird : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("You died");
-        Time.timeScale = 0;
+        Died?.Invoke();
     }
 
     public void Freeze()

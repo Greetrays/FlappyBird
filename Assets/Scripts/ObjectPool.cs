@@ -44,7 +44,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    protected void Reset()
+    public void Reset()
     {
         foreach (var item in _pool)
         {
