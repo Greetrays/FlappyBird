@@ -51,8 +51,6 @@ public class Game : MonoBehaviour
 
     private void OnDied()
     {
-        Debug.Log(1);
         _gameOverScreen.Open();
-        Time.timeScale = 0;
     }
 }

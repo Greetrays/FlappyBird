@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
@@ -11,12 +12,14 @@ public class BirdMover : MonoBehaviour
     [SerializeField] private float _speedRotate;
     [SerializeField] private float _minRotationZ;
     [SerializeField] private float _maxRotationZ;
+    [SerializeField] private UnityEvent _jumped;
 
     private Vector2 _startPosition;
     private Quaternion _minRotation;
     private Quaternion _maxRotation;
     private Rigidbody2D _rigidbody;
     private bool _moveIsPosible;
+
 
     private void Start()
     {
@@ -32,6 +35,7 @@ public class BirdMover : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                _jumped?.Invoke();
                 transform.rotation = _maxRotation;
                 _rigidbody.velocity = new Vector2(_speed, 0);
                 _rigidbody.AddForce(Vector2.up * _speedJump, ForceMode2D.Force);

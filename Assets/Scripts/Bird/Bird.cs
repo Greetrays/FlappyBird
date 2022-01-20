@@ -7,10 +7,15 @@ using UnityEngine.Events;
 
 public class Bird : MonoBehaviour
 {
+    [SerializeField] private UnityEvent _changedScoreAudio;
+
     private int _score;
     private BirdMover _birdMover;
 
     public event UnityAction Died;
+    public event UnityAction ChangedScore;
+
+    public int Score => _score;
 
     private void Start()
     {
@@ -20,6 +25,7 @@ public class Bird : MonoBehaviour
     public void ResetPlayer()
     {
         _score = 0;
+        ChangedScore?.Invoke();
         _birdMover.Reset();
     }
 
@@ -36,5 +42,7 @@ public class Bird : MonoBehaviour
     public void AddScore()
     {
         _score++;
+        ChangedScore?.Invoke();
+        _changedScoreAudio?.Invoke();
     }
 }

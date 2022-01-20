@@ -49,6 +49,7 @@ public class ObjectPool : MonoBehaviour
         foreach (var item in _pool)
         {
             item.SetActive(false);
+            item.transform.position = _container.transform.position;
         }
     }
 }
