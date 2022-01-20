@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BirdMover))]
 
@@ -8,6 +9,8 @@ public class Bird : MonoBehaviour
 {
     private int _score;
     private BirdMover _birdMover;
+
+    public event UnityAction Died;
 
     private void Start()
     {
@@ -24,6 +27,11 @@ public class Bird : MonoBehaviour
     {
         Debug.Log("You died");
         Time.timeScale = 0;
+    }
+
+    public void Freeze()
+    {
+        _birdMover.SwitchMoveIsPosible(false);
     }
 
     public void AddScore()

@@ -17,7 +17,9 @@ public class BirdCollisionHendler : MonoBehaviour
     {
         if (collision.TryGetComponent(out ScoreZone score))
             _player.AddScore();
-        else
+        else if (collision.TryGetComponent(out Pipes pipes))
+            _player.Freeze();
+        else if (collision.TryGetComponent(out Ground ground))
             _player.Die();
     }
 }
